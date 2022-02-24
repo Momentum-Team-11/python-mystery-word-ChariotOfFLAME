@@ -47,7 +47,7 @@ def play_game():
                 guessList.append(playerLetter)  # add the guessed letter to the LIST of guessed letters
                 guessedLetters += f" {playerLetter}, "  # add the guessed letter to the STRING of guessed letters
                 print("""
-OH NO! That wasn't right. Try again
+OH NO! That wasn't right...
 """)  # and start the while loop over
             else:  # if they guess right...
                 idx = 0  # create an index counter for the results list
