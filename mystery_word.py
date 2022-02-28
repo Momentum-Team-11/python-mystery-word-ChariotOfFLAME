@@ -2,11 +2,13 @@ import string
 from random import choice
 
 
+file = open("words.txt")  # Open the file
+words = file.read().upper().split()  # read the file and make it a string that is uppercase
+
+
 def play_game():
-    # play = True
-    # while play is True:
-        file = open("words.txt")  # Open the file
-        words = file.read().upper().split()  # read the file and make it a string that is uppercase
+    play = True
+    while play is True:
         word = choice(words)
         word = word.replace("\n", "")  # erase the \n
         wordList = []  # make an empty list for the word
@@ -68,9 +70,15 @@ OH NO! That wasn't right...
             print(f"""CONGRADULATIONS! The word was {word}!
 You guessed{guessedLetters}, which means...
 You got the word in {guessCounter} guesses!""")
-        # playAgain = input("Would you like to play again?")
-        # if playAgain.lower() == "no" or "n":
-        #     play = False
+        playAgain = input("Would you like to play again?")
+        if "n" in playAgain:
+            print("""_____________________________________________
+Ok! Run me again when you want to play!""")
+            play = False
+        if "y" in playAgain:
+            print("""_____________________________________________
+Alright!!! Here we go!!!
+""")
 
 
 if __name__ == "__main__":
